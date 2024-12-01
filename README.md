@@ -13,6 +13,14 @@ Internet Information Services >
 		Static Content Compression
 ```
 
+### Install Python
+<img src="https://www.python.org/static/img/python-logo.png"/>
+<br />
+Get the Python installer from <a href="https://www.python.org/downloads/windows/">python.org</a>
+<br />
+Install Python in the local user, and ensure the ADD TO PATH checkbox is ticked.
+
+
 ### Install and enable Python virtual environment
 #### Run in powershell in ImportTool folder (not elevated) 
 Create the virtual environment and activate it:
