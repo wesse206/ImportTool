@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ImportTool</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='w3.css') }}">
+    </head>
+    
+    <body class="w3-padding">
+        <h1 class="w3-text">Select a spreadsheet to import into SQL</h1>
+        
+        <form method=post enctype=multipart/form-data class="w3-margin w3-container">
+            <div class="w3-container w3-card w3-round-large w3-padding">
+                <p for="file">Select .xlsx spreadsheet(s) to import:</p>
+                <input class="w3-input" id="file" type=file name=file accept=".xlsx" multiple/>  
+            </div>
+            <br />
+            <div class="w3-container w3-card w3-round-large w3-padding">
+                <p for="table">Select table to import into:</p>
+                <input id="table" class="w3-input w3-animate-input" type=text name=table style="width:30%" />
+            </div>
+            <br />
+            <input class="w3-border w3-padding w3-button w3-blue-grey w3-round-xlarge" type=submit value=Upload style="width:100%; border: solid 2px black;" />
+        </form>
+
+        {% if table %}
+        <table class="w3-table-all">
+            <tr>
+                {% for heading in headings %}
+                    <th>{{ heading }}</th>
+                {% endfor %} 
+            </tr>
+            {% for row in table %}
+                <tr>
+                    {% for cell in row %}
+                        <td>{{ cell }}</td>
+                    {% endfor %} 
+                </tr>
+            {% endfor %}
+
+        </table>
+            
+            
+        {% endif %}
+    </body>
+</html>
+    

@@ -1,0 +1,10 @@
+/.vs
+/.vscode
+/ImportTool.sln
+/ImportTool.zip
+/logs
+/obj
+/venv
+/web.config.old
+/wsgi.py
+/__pycache__
