@@ -43,3 +43,22 @@ Install `wfastcgi` to IIS to be able to host the app
 Give all permissions for the following folders to `IIS_IUSRS`: 
 - ImportTool
 - Python (where system installed it)
+
+## Config File Structure
+The config file is saved as `config.ini` in the ImportTool folder. <br />
+The structure of the file is as follows:
+```
+[Database]
+server=INSTANCE_NAME
+database=DB
+username=USER
+password=PASS
+table=WORKING_TABLE
+```
+Where INSTANCE_NAME points to the SQL Server Instance, DB points to the SQL Database, USER and PASS points to the SQL Database User and Password respectively and WORKING_TABLE points to the SQL Table that should be used
+
+## SQL Table Structure
+The SQL Table should contain the same number of fields that needs to be imported with all field types set up as `varchar`
+
+## Excel File Structure
+The first (therefore default) spreadsheet of the `.xlsx` workbook will be used for the import. The sheet should have headers that match the SQL Table fields.
